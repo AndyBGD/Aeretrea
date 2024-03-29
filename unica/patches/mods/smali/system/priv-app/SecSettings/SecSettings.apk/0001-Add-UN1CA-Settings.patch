@@ -115,7 +115,7 @@ index 23eb925b..6f775f89 100644
      <public type="drawable" name="wifi_friction" id="0x7f080b97" />
      <public type="drawable" name="wifi_signal" id="0x7f080b98" />
      <public type="drawable" name="work_challenge_emergency_button_background" id="0x7f080b99" />
-+    <public type="drawable" name="sec_ic_settings_unica" id="0x7f080b9a" />
++    <public type="drawable" name="sec_ic_settings_unica" id="0x7f080ba0" />
      <public type="drawable" name="$accessibility_shortcut_type_software_gesture__0" id="0x7f080016" />
      <public type="drawable" name="$accessibility_shortcut_type_software_gesture__1" id="0x7f080017" />
      <public type="drawable" name="$accessibility_shortcut_type_software_gesture_talkback__0" id="0x7f080018" />
