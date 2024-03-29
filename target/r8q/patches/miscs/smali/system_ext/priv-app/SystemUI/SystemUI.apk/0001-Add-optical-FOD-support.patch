@@ -1,4 +1,4 @@
-From a9624ac5cd805fee5429e0f6694bedd199590089 Mon Sep 17 00:00:00 2001
+From 5de71466681a34908603c1f1ca44d112297767a3 Mon Sep 17 00:00:00 2001
 From: ata-kaner <ata.kaner03@gmail.com>
 Date: Thu, 28 Mar 2024 22:57:59 +0300
 Subject: [PATCH] Add optical FOD support
@@ -9,7 +9,7 @@ Subject: [PATCH] Add optical FOD support
  .../smali/com/android/systemui/LsRune.smali   |   4 +
  .../plugin/PluginFaceWidgetManager.smali      |   6 +-
  .../features/GlobalActionFeatures.smali       |   8 +-
- ...ewMediator$$ExternalSyntheticLambda3.smali |  35 +-
+ ...ewMediator$$ExternalSyntheticLambda3.smali |  37 +-
  ...ewMediator$$ExternalSyntheticLambda6.smali | 863 +++++++++---------
  ...ationShadeWindowControllerHelperImpl.smali |  34 +-
  .../statusbar/phone/CentralSurfacesImpl.smali |  39 +-
@@ -24,7 +24,7 @@ Subject: [PATCH] Add optical FOD support
  .../view/KeyguardAnimatedWallpaper.smali      |   6 +-
  .../view/KeyguardImageWallpaper.smali         |   6 +-
  .../view/KeyguardVideoWallpaper.smali         |  12 +-
- 20 files changed, 896 insertions(+), 555 deletions(-)
+ 20 files changed, 897 insertions(+), 556 deletions(-)
 
 diff --git a/smali/com/android/keyguard/KeyguardSecUpdateMonitor.smali b/smali/com/android/keyguard/KeyguardSecUpdateMonitor.smali
 index 033974baa..c80f18151 100644
@@ -711,7 +711,7 @@ index fea9f8b01..e0cb438d3 100644
      :cond_c
      const-string v0, "SUPPORT_SIDE_KEY"
 diff --git a/smali/com/android/systemui/keyguard/KeyguardViewMediator$$ExternalSyntheticLambda3.smali b/smali/com/android/systemui/keyguard/KeyguardViewMediator$$ExternalSyntheticLambda3.smali
-index e4914e840..a5f2d8be2 100644
+index e4914e840..72b2379a9 100644
 --- a/smali/com/android/systemui/keyguard/KeyguardViewMediator$$ExternalSyntheticLambda3.smali
 +++ b/smali/com/android/systemui/keyguard/KeyguardViewMediator$$ExternalSyntheticLambda3.smali
 @@ -277,10 +277,17 @@
@@ -751,7 +751,7 @@ index e4914e840..a5f2d8be2 100644
  
      iget-object v0, p0, Lcom/android/systemui/keyguard/KeyguardViewMediatorHelperImpl;->activityManager:Landroid/app/ActivityManager;
  
-@@ -316,7 +323,7 @@
+@@ -316,30 +323,30 @@
  
      move-result v0
  
@@ -760,7 +760,10 @@ index e4914e840..a5f2d8be2 100644
  
      move v0, v1
  
-@@ -326,20 +333,20 @@
+     goto :goto_6
+ 
+-    :cond_9
++    :cond_a
      move v0, v2
  
      :goto_6
