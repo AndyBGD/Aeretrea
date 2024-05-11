@@ -39,3 +39,27 @@ on init
     chmod 0220 /sys/class/sec/ccic/ovp_ic_shutdown
     chown system system /sys/class/sec/ccic/hmd_power
     chmod 0220 /sys/class/sec/ccic/hmd_power
+
+on boot
+
+# vibrator
+    chown system system /sys/class/timed_output/vibrator/enable
+    chown system system /sys/class/timed_output/vibrator/intensity
+    chown system system /sys/class/timed_output/vibrator/multi_freq
+    chown system system /sys/class/timed_output/vibrator/haptic_engine
+    chown system system /sys/class/timed_output/vibrator/motor_type
+    chown system system /sys/class/timed_output/vibrator/event_cmd
+    chown system system /sys/class/timed_output/vibrator/cp_trigger_index
+    chown system system /sys/class/timed_output/vibrator/cp_trigger_queue
+    chown system system /sys/class/timed_output/vibrator/gpio1_enable
+    chown system system /sys/class/timed_output/vibrator/gpio1_fall_index
+    chown system system /sys/class/timed_output/vibrator/gpio1_fall_timeout
+    chown system system /sys/class/timed_output/vibrator/gpio1_rise_index
+    chown system system /sys/class/timed_output/vibrator/f0_measured
+    chown system system /sys/class/timed_output/vibrator/f0_stored
+    chown system system /sys/class/timed_output/vibrator/redc_measured
+    chown system system /sys/class/timed_output/vibrator/redc_stored
+    chown system system /sys/class/timed_output/vibrator/comp_enable
+    chown system system /sys/class/timed_output/vibrator/standby_timeout
+    chown system system /sys/class/timed_output/vibrator/heartbeat
+    chown system system /sys/class/timed_output/vibrator/num_waves

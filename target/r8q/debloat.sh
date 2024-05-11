@@ -41,10 +41,10 @@ system/app/MoccaMobile
 "
 
 # eSE
-SYSTEM_DEBLOAT+="
-system/bin/esecos_daemon
-system/etc/init/esecos.rc
-"
+#SYSTEM_DEBLOAT+="
+#system/bin/esecos_daemon
+#system/etc/init/esecos.rc
+#"
 
 # system_ext clean-up
 SYSTEM_EXT_DEBLOAT+="
